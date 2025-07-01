@@ -13,3 +13,7 @@ if st.button("Genera Post"):
         st.warning("Inserisci almeno un'idea per generare il contenuto.")
     else:
         st.success(f"Ecco un esempio di post per {platform} in tono {tone}:\n\n📢 {idea} 🚀")
+uploaded_file = st.file_uploader("Carica un'immagine", type=["png", "jpg", "jpeg"])
+
+if uploaded_file is not None:
+    st.image(uploaded_file, caption="Immagine caricata", use_column_width=True)
