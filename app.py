@@ -13,11 +13,10 @@ st.title("🧠 Assistente Virtuale per i Social Media")
 # --------------------------
 #  Carico chiavi segrete
 # --------------------------
-openai.api_key = st.secrets["OPENAI_Ask-proj-IHwarjLPekKaFJNL-pIwBgpmI-59E3tRuO2kJS6AkytVrvJNvVjUX9gKFEU6zO7EYDOBdgiESKT3BlbkFJwrVt7AyVeSwV1qwiiMm58lYjnXn8jiYpx4yNFJRH6GBuYweEc3-QgDgeo6CSxviHhYf6Xy8nkA
-PI_KEY"]
+openai.api_key = st.secrets["OPENAI_API_KEY"]
 
-AIRTABLE_TOKEN   = st.secrets["patmSYb6QI7eTbA0z.53e0107c7205d3e32bdce36ddb07f418b5deeae3e57852b2d0f19e7a93fae7e1"]
-AIRTABLE_BASE_ID = st.secrets["https://airtable.com/appYBPheMnFRcgamt/tblQNZ2DVQFNiwWpF/viw6UR1Yypvd6myKI?blocks=hide"]
+AIRTABLE_TOKEN   = st.secrets["AIRTABLE_TOKEN"]
+AIRTABLE_BASE_ID = st.secrets["AIRTABLE_BASE_ID"]
 AIRTABLE_TABLE   = "Contenuti"
 
 # --------------------------
@@ -78,10 +77,9 @@ Max 50 parole totali.
     return resp.choices[0].message.content.strip()
 
 def salva_su_airtable(fields: dict):
-    url = f"https://api.airtable.com/v0/{https://airtable.com/appYBPheMnFRcgamt/tblQNZ2DVQFNiwWpF/viw6UR1Yypvd6myKI?blocks=hide
-}/{AIRTABLE_TABLE}"
+    url = f"https://api.airtable.com/v0/{AIRTABLE_BASE_ID}/{AIRTABLE_TABLE}"
     headers = {
-        "Authorization": f"Bearer {AIRTApatmSYb6QI7eTbA0z.53e0107c7205d3e32bdce36ddb07f418b5deeae3e57852b2d0f19e7a93fae7e1BLE_TOKEN}",
+        "Authorization": f"Bearer {AIRTABLE_TOKEN}",
         "Content-Type": "application/json"
     }
     data = {"fields": fields}
